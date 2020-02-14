@@ -1,0 +1,33 @@
+<ion-header  >
+    <ion-toolbar color="dark">
+      <ion-title>
+        LOGIN
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding" style="background: #eee">
+
+    <div class="onSmallMiddle">
+        <ion-card style="margin-top: 100px;" class="ion-padding shadowPP">
+            <ion-card-header style="margin-bottom: 20px;">
+                <ion-card-subtitle>Backoffice Login</ion-card-subtitle>
+                <ion-card-title>Please login to make orders!</ion-card-title>
+              </ion-card-header>
+            <ion-item>
+                <ion-icon slot="start" name="person"></ion-icon>
+                <ion-input #emailInput placeholder="email"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-icon slot="start" name="lock"></ion-icon>
+                  <ion-input #passwordInput type="password" placeholder="Password"></ion-input>
+                </ion-item>
+    
+                <div class="ion-padding">
+                    <ion-button expand="full" size="large" fill="clear" (click)="signIn(emailInput, passwordInput)">LOGIN</ion-button>
+                </div>
+          
+        </ion-card>
+    </div>
+
+
+    </ion-content>

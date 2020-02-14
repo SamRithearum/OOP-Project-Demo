@@ -1,0 +1,38 @@
+<ion-app>
+  <ion-split-pane>
+    <ion-menu type="overlay">
+      <ion-header >
+        <ion-toolbar *ngIf="userData" color="dark">
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content color="dark">
+         
+        <ion-list lines="none" style="margin-top: 40px " >
+          <ion-list-header color="dark">Welcome Back!</ion-list-header>
+          <ion-list-header *ngIf="userData" color="dark">
+              {{userData}}
+          </ion-list-header>
+ 
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages" >
+            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]" color="dark">
+              <ion-icon slot="start" [name]="p.icon"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+            
+          </ion-menu-toggle>
+        </ion-list>
+        <ion-list>
+          <ion-item color="dark" (click)="onLogout()">
+              <ion-icon slot="start" name="exit"></ion-icon>
+              <h2><a></a>  </h2>
+              <h2><a>Logout</a></h2>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>
